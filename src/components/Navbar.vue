@@ -3,7 +3,7 @@ import { cart } from '../store.js'
 export default {
     data() {
     return {
-      cart
+      cart,
     }
     }
 }
@@ -44,7 +44,7 @@ export default {
     </div>
      <!-- <font-awesome-icon icon="fa-solid fa-cart-shopping" /> -->
      <img src="../assets/images/icon-cart.svg" class="img-fluid cartStyle" width="25" alt="...">
-  <span class="  badge rounded-pill bg-danger cartBadge pt-0 pb-0">
+  <span v-show="cart.count > 0" class="  badge rounded-pill bg-danger cartBadge pt-0 pb-0">
    {{cart.count}}
   </span>
 
@@ -105,6 +105,13 @@ export default {
  .avatarStyle{
      top: -15px;
      margin-left: 3rem;
+     border: 3px solid hsla(26, 100%, 55%, 0) ;
+     border-radius: 100%
+ }
+ .avatarStyle:hover{
+     border: 3px solid hsl(26, 100%, 55%) ;
+     border-radius: 100%;
+     cursor: pointer;
  }
 .cartStyle{
     top: -15px;

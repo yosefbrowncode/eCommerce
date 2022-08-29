@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.vue'
 import CartButton from './components/CartButton.vue'
 import PlusMinus from './components/PlusMinus.vue'
 import Description from './components/Description.vue'
+import PictureComp from './components/PictureComp.vue'
 </script>
 
 <template>
@@ -16,9 +17,7 @@ import Description from './components/Description.vue'
   <main>
     <div class="container-fluid">
       <div class="row appRowMargin">
-        <div class="col-6">
-
-        </div>
+        <picture-comp/>
       <description/>
       </div>
     </div>
@@ -30,7 +29,7 @@ header {
   line-height: 1.5;
 }
 .appRowMargin{
-  margin-top: 70px;
+  margin-top: 90px;
 }
 
 .logo {
