@@ -2,6 +2,10 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import Navbar from './components/Navbar.vue'
+import CartButton from './components/CartButton.vue'
+import PlusMinus from './components/PlusMinus.vue'
+import Description from './components/Description.vue'
+import PictureComp from './components/PictureComp.vue'
 </script>
 
 <template>
@@ -11,13 +15,21 @@ import Navbar from './components/Navbar.vue'
   </header>
 
   <main>
-   
+    <div class="container-fluid">
+      <div class="row appRowMargin">
+        <picture-comp/>
+      <description/>
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
+}
+.appRowMargin{
+  margin-top: 90px;
 }
 
 .logo {
