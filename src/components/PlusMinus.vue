@@ -23,13 +23,19 @@ export default {
 
 <template>
 
-<button  class="btn btn-secondary btn-lg plusMinusBtn row"  >
+<button  class="btn btn btn-lg plusMinusBtn"  >
    
-        <img src="../assets/images/icon-minus.svg" @click="minusButton" class="img-fluid cartStyle my-auto col-4 pl-0" width="12" alt="...">
+     
+  <span class="cartStyle col-4 pr-0" @click="minusButton">
+         <img src="../assets/images/icon-minus.svg" class="img-fluid "  width="15" alt="...">
   
+   </span>
    
    <span class="plusMinusNum my-auto col-4">{{store.count}}</span>
-   <img src="../assets/images/icon-plus.svg" @click="plusButton" class="img-fluid cartStyle my-auto col-4 pr-0" width="12" alt="...">
+   <span class="cartStyle col-4 pr-0" @click="plusButton">
+        <img src="../assets/images/icon-plus.svg"  class="img-fluid " width="15" alt="...">
+   </span>
+  
 
 
 
@@ -38,29 +44,26 @@ export default {
 </template>
 
 <style scoped>
+
 .plusMinusBtn{
-    
-    width: 150px;
+    width:100%;
     height: 55px;
     display: flex;
     justify-content: space-between;
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-  
-}
-.plusMinusBtn:hover{
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-    color: black;
+    background-color: #f5f5f5 !important;
+    border-color: #f5f5f5 !important;
 }
 .plusMinusBtn:focus{
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
-    color: black;
+    outline: none !important;
+  box-shadow: none !important; 
+}
+.plusMinusBtn:active{
+    outline: none !important;
+  box-shadow: none !important; 
 }
 .plusMinusNum{
     font-family: 'Kumbh Sans', sans-serif !important;
-  color: black;
+    color: black;
     font-weight: 600;
 }
 
