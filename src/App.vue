@@ -1,17 +1,15 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import Navbar from './components/Navbar.vue'
 import CartButton from './components/CartButton.vue'
 import PlusMinus from './components/PlusMinus.vue'
 import Description from './components/Description.vue'
 import PictureComp from './components/PictureComp.vue'
+
 </script>
 
 <template>
   <header>
   <Navbar/>
-   
   </header>
 
   <main>
@@ -41,7 +39,6 @@ header {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   .logo {
@@ -54,4 +51,13 @@ header {
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 992px){
+  .appRowMargin{
+    margin-top: 0px;
+    justify-content: center;
+  }
+  
+}
+
 </style>

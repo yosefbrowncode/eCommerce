@@ -7,3 +7,7 @@ export const store = reactive({
 export const cart = reactive({
   count: 0,
 });
+
+export const showing = reactive({
+  shows: false,
+});

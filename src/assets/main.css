@@ -19,9 +19,10 @@ a,
 
 }
 
-@media (min-width: 1024px) {
-  body {
-   
+@media (max-width: 992px) {
+  #app{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   
