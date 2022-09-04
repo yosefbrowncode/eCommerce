@@ -219,6 +219,4 @@ top: 50%;
 .buttonStyle:hover{
     color: hsl(26, 89%, 58%, 1)
 }
-
-
 </style>
