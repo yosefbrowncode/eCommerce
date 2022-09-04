@@ -1,11 +1,16 @@
 <script>
+import Modal from './Modal.vue'
 export default {
+    components: {
+        Modal
+  },
     data() {
     return {
         isActive: 1,
         imageNum: 0,
         numForClass: 5,
         clickedBtn: null,
+        showModal: false,
         imageUrl: "src/assets/images/image-product-1.jpg",
         image: ["src/assets/images/image-product-1.jpg","src/assets/images/image-product-2.jpg","src/assets/images/image-product-3.jpg","src/assets/images/image-product-4.jpg"]
     }
@@ -37,6 +42,7 @@ export default {
 
 <template>
     <div class="col-12 col-lg-6 col-xxl-6">
+          <!-- <button id="show-modal" @click="showModal = true">Show Modal</button> -->
         <div class="row">
             <div class="col-12 col-lg-10 mx-auto changePicPadding d-flex justify-content-between d-lg-none" :style="{ backgroundImage: 'url(  '+ image[imageNum]  +'  )' }" >
                 <button class="ms-2 ms-sm-3 ms-md-4  my-auto btnStatus" :disabled="imageNum == 0" @click="arrayNumDown(); clickedBtn = true" :class="{btnStatusClicked: clickedBtn & numForClass > 0 }"><img src="../assets/images/icon-previous.svg"  class="img-fluid my-auto " alt="..."></button>
@@ -44,7 +50,7 @@ export default {
            
             </div>
             <div class="col-12 col-lg-10 mx-auto d-none d-lg-block">
-                    <img v-show="isActive" :src="imageUrl"  class="img-fluid productPic" alt="...">
+         <a id="show-modal" @click="showModal = true"><img v-show="isActive" :src="imageUrl"  class="img-fluid productPic" alt="..."></a>
             </div>
             <div class="col-10 mx-auto mt-4 d-none d-lg-block" >
                 <div class="row">
@@ -55,23 +61,34 @@ export default {
                     </div>
                     <div class="col-3">
                         <div class="borderMorderTransparent"  :class="{borderMorder: isActive == 2}">
-                        <img src="../assets/images/image-product-2-thumbnail.jpg" @click="changeImage(image[1]), changeClass(2)" :class="{ active: isActive == 2 }"  class="img-fluid productPicThumb" alt="...">
+                        <img src="../assets/images/image-product-2-thumbnail.jpg" @click="changeImage(image[1]), changeClass(2)" :class="{ active: isActive == 2}"  class="img-fluid productPicThumb" alt="...">
                         </div>
                     </div>
                     <div class="col-3" >
                         <div class="borderMorderTransparent"  :class="{borderMorder: isActive == 3}">
-                        <img src="../assets/images/image-product-3-thumbnail.jpg" @click="changeImage(image[2]), changeClass(3)" :class="{ active: isActive == 3 }"  class="img-fluid productPicThumb" alt="...">
+                        <img src="../assets/images/image-product-3-thumbnail.jpg" @click="changeImage(image[2]), changeClass(3)" :class="{ active: isActive == 3}"  class="img-fluid productPicThumb" alt="...">
                         </div>
                     </div>
                     <div class="col-3" >
                         <div class="borderMorderTransparent"  :class="{borderMorder: isActive == 4}">
-                        <img src="../assets/images/image-product-4-thumbnail.jpg" @click="changeImage(image[3]),changeClass(4)" :class="{ active: isActive == 4 }"  class="img-fluid productPicThumb" alt="...">
+                        <img src="../assets/images/image-product-4-thumbnail.jpg" @click="changeImage(image[3]),changeClass(4)" :class="{ active: isActive == 4}"  class="img-fluid productPicThumb" alt="...">
                         </div>
                     </div>
                 </div>       
            </div>
         </div>
     </div>
+    <!-- Not The best Idea but I am going for it -->
+
+      <Teleport to="body">
+     <!-- use the modal component, pass in the prop -->
+    <modal :show="showModal" @close="showModal = false"  >
+        
+        
+     
+    </modal>
+  </Teleport>
+   
 </template>
 
 <style scoped>
@@ -90,6 +107,7 @@ export default {
 }
  .productPic{
      border-radius: 20px;
+     cursor: pointer;
  }
  .productPicThumb{
      border-radius: 6px;

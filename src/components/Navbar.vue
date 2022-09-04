@@ -61,7 +61,7 @@ export default {
     <div>
       <img @click.prevent="showing = !showing"  src="../assets/images/icon-cart.svg" class="img-fluid cartStyle" width="25" alt="...">
      <span v-show="cart.count > 0" class="position-absolute start-90 translate-middle badge rounded-pill bg-danger cartBadge">
-       <span class="fw-bold">{{cart.count}}</span>
+       <span  @click.prevent="showing = !showing" class="fw-bold">{{cart.count}}</span>
     </span>
     </div>
      
