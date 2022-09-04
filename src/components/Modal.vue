@@ -1,4 +1,8 @@
 <script>
+ import image1 from "@/assets/images/image-product-1.jpg"
+ import image2 from "@/assets/images/image-product-2.jpg"
+ import image3 from "@/assets/images/image-product-3.jpg"
+ import image4 from "@/assets/images/image-product-4.jpg"
 export default {
      props: {
     show: Boolean
@@ -10,8 +14,8 @@ export default {
         numForClass: 5,
         clickedBtn: null,
         showModal: false,
-          imageUrl: "public/image-product-1.jpg",
-          image: ["public/image-product-1.jpg","public/image-product-2.jpg","public/image-product-3.jpg","public/image-product-4.jpg"]
+            imageUrl: image1,
+            image: [image1, image2, image3, image4]
       }
   },
     methods: {
