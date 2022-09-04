@@ -10,8 +10,8 @@ export default {
         numForClass: 5,
         clickedBtn: null,
         showModal: false,
-          imageUrl: "../assets/images/image-product-1.jpg",
-          image: ["../assets/images/image-product-1.jpg","../assets/images/image-product-2.jpg","../assets/images/image-product-3.jpg","../assets/images/image-product-4.jpg"]
+          imageUrl: "public/image-product-1.jpg",
+          image: ["public/image-product-1.jpg","public/image-product-2.jpg","public/image-product-3.jpg","public/image-product-4.jpg"]
       }
   },
     methods: {
